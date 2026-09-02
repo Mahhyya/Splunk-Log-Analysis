@@ -28,7 +28,9 @@
 | `ts` | Event timestamp |
  
 ## Screenshots
-| File | Description |
-|---|---|
-| `screenshots/add-data-summary.png` | Add Data summary screen confirming source, sourcetype, and index |
-| `screenshots/raw-event-fields.png` | Expanded raw event showing extracted JSON fields |
+ 
+**Add Data summary confirming source, sourcetype, and index**
+![Add Data Summary](./screenshots/add-data-summary.png)
+ 
+**Expanded raw event showing extracted JSON fields**
+![Raw Event Fields](./screenshots/raw-event-fields.png)
