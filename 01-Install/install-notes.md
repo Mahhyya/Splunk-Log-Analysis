@@ -12,10 +12,12 @@ Splunk Enterprise was installed locally on Windows to serve as the SIEM platform
 4. Launched Splunk Web at `http://localhost:8000` and logged in.
 5. Confirmed the install by checking **Settings → Server Settings**, which shows the running version.
 ## Screenshots
-| File | Description |
-|---|---|
-| `screenshots/splunk-home.png` | Splunk Web home/launcher page after install |
-| `screenshots/server-settings.png` | Server Settings page confirming version and install |
+ 
+**Splunk Web home page after install**
+![Splunk Home](./screenshots/splunk-home.png)
+ 
+**Server Settings confirming version and install**
+![Server Settings](./screenshots/server-settings.png)
  
 ## Notes
 - No SMTP/email server configured — alerts in this project use the "Add to Triggered Alerts" action instead of email delivery.
