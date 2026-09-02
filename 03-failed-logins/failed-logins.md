@@ -36,4 +36,9 @@ source="ssh_logs_new.json" host="Mahhyya" sourcetype="_json" event_type="Failed 
 - Top source IP by failure count: _fill in_
 - Most targeted username: _fill in_
 ## Screenshots
-Add result-table screenshots here (with the SPL search bar visible) as `screenshots/failed-logins-by-ip.png`, `screenshots/top-usernames.png`, etc.
+ 
+**Failed logins by source IP**
+![Failed Logins by IP](./screenshots/failed-logins-by-ip.png)
+ 
+**Top targeted usernames**
+![Top Usernames](./screenshots/top-usernames.png)
