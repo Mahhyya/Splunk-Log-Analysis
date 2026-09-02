@@ -50,4 +50,18 @@ A handful of failed logins scattered across a day is normal user error. The same
 - Any brute-force-then-breach IPs found (Approach C): _fill in_
 - Password spraying detected: _fill in / none observed_
 ## Screenshots
+ 
+**Approach A — High attempt count per connection**
+![Approach A](./screenshots/approach-a.png)
+ 
+**Approach B — Time-window brute force**
+![Approach B](./screenshots/approach-b.png)
+ 
+**Approach C — Brute-force-then-breach**
+![Approach C](./screenshots/approach-c.png)
+ 
+**Approach D — Password spraying check**
+![Approach D](./screenshots/approach-d.png)): _fill in_
+- Password spraying detected: _fill in / none observed_
+## Screenshots
 Add screenshots for each approach's result table as `screenshots/approach-a.png`, `screenshots/approach-b.png`, `screenshots/approach-c.png`, `screenshots/approach-d.png`.
