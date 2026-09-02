@@ -23,10 +23,12 @@ source="ssh_logs_new.json" host="Mahhyya" sourcetype="_json" event_type="Failed 
 5 failed attempts within a 5-minute window from a single source IP is a reasonable baseline for flagging brute-force behavior without generating excessive false positives from normal user typos.
  
 ## Screenshots
-| File | Description |
-|---|---|
-| `screenshots/alert-settings.png` | Alert configuration page showing trigger condition and schedule |
-| `screenshots/triggered-alerts.png` | Activity → Triggered Alerts showing a fired instance |
+ 
+**Alert configuration page showing trigger condition and schedule**
+![Alert Settings](./screenshots/alert-settings.png)
+ 
+**Activity → Triggered Alerts showing a fired instance**
+![Triggered Alerts](./screenshots/triggered-alerts.png)
  
 ## Possible Improvements
 - Add an email or webhook action for real delivery instead of triggered-alerts logging.
