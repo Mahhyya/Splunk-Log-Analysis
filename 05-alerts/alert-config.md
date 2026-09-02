@@ -1,4 +1,4 @@
-# 07 — Alerts
+# 05 — Alerts
  
 ## Goal
 Convert the brute-force detection query into a scheduled alert so active attacks are flagged without manually re-running searches.
