@@ -1,4 +1,4 @@
-# 05 — Brute Force Detection
+# 04 — Brute Force Detection
  
 ## Goal
 Move beyond raw failed-login counts to detect actual brute-force *patterns* — repeated attempts within a short time window, and cases where an attacker eventually succeeded after multiple failures.
