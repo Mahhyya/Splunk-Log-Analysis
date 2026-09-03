@@ -28,7 +28,7 @@ source="ssh_logs_new.json" host="Mahhyya" sourcetype="_json" event_type="Failed 
 The strongest signal: an IP that failed repeatedly and then succeeded.
 ```spl
 source="ssh_logs_new.json" host="Mahhyya" sourcetype="_json"
-| stats sum(eval(auth_success=false)) as fails, sum(eval(auth_success=true)) as successes by id.orig_h
+| stats count(eval(event_type="Failed SSH Login")) as fails, count(eval(event_type="Successful SSH Login")) as successes by id.orig_h
 | where fails > 3 AND successes > 0
 | sort -fails 
 ```
