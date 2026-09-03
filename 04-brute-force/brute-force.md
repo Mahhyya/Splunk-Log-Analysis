@@ -11,7 +11,7 @@ Uses Zeek's own `auth_attempts` counter (attempts within a single connection):
 source="ssh_logs_new.json" host="Mahhyya" sourcetype="_json"
 auth_attempts > 3 auth_success=false
 | table _time, id.orig_h, username, auth_attempts
-| sort -auth_attempts
+| sort -auth_attempts | head 10
 ```
  
 **B — Time-window brute force**
@@ -21,7 +21,7 @@ source="ssh_logs_new.json" host="Mahhyya" sourcetype="_json" event_type="Failed 
 | bin _time span=5m
 | stats sum(auth_attempts) as total_attempts, dc(username) as usernames_tried by id.orig_h, _time
 | where total_attempts >= 5
-| sort -total_attempts
+| sort -total_attempts | head 10
 ```
  
 **C — Brute-force-then-breach**
@@ -30,7 +30,7 @@ The strongest signal: an IP that failed repeatedly and then succeeded.
 source="ssh_logs_new.json" host="Mahhyya" sourcetype="_json"
 | stats sum(eval(auth_success=false)) as fails, sum(eval(auth_success=true)) as successes by id.orig_h
 | where fails > 3 AND successes > 0
-| sort -fails
+| sort -fails | head 10
 ```
  
 **D — Password spraying check**
@@ -39,7 +39,7 @@ One IP trying many different usernames with few attempts each (a different attac
 source="ssh_logs_new.json" host="Mahhyya" sourcetype="_json" event_type="Failed SSH Login"
 | stats dc(username) as unique_usernames, count as total_failures by id.orig_h
 | where unique_usernames > 5
-| sort -unique_usernames
+| sort -unique_usernames | head 10
 ```
  
 ## Why Time Windows Matter
