@@ -46,7 +46,7 @@ A source IP with just 1-2 failed logins is usually normal user error (wrong pass
  
 ## Findings
 - IPs flagged by Approach B: _fill in_
-- Any brute-force-then-breach IPs found (Approach C): _fill in_
+- Any brute-force-then-breach IPs found (Approach C): No IPs in this dataset exhibited a brute-force-then-breach pattern — attacking source IPs either failed consistently across all attempts or succeeded without any preceding failures, suggesting the successful logins may represent legitimate users rather than compromised brute-force attempts.
 - Password spraying detected: _fill in / none observed_
 ## Screenshots
  
@@ -61,5 +61,4 @@ A source IP with just 1-2 failed logins is usually normal user error (wrong pass
  
 **Approach D — Password spraying check**
 ![Approach D](./screenshots/approach-d.png)
-## Screenshots
-Add screenshots for each approach's result table as `screenshots/approach-a.png`, `screenshots/approach-b.png`, `screenshots/approach-c.png`, `screenshots/approach-d.png`.
+
