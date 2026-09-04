@@ -85,8 +85,9 @@ Full query set with explanations: [`07-spl-queries/queries.md`](./07-spl-queries
 ## 🚨 Alert
 Configured a scheduled alert on the brute-force detection query (5-min interval, triggers when `total_attempts >= 5` for any source IP).
 
-![Alert Config](./07-alerts/screenshots/alert-settings.png)
-![Triggered Alert](./07-alerts/screenshots/triggered-alerts.png)
+![Alert Config](./05-alerts/screenshots/alert-settings_1.png)
+![Alert Config](./05-alerts/screenshots/alert-settings_2.png)
+![Triggered Alert](./05-alerts/screenshots/triggered-alerts.png)
 
 ---
 
