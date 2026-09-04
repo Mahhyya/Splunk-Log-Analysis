@@ -25,6 +25,7 @@ Simulate a real-world SOC analyst workflow: ingest raw SSH authentication logs i
 ## 🛠️ Tools & Environment
 - **Splunk Enterprise** (Windows)
 - **Data format:** Zeek/Bro SSH connection logs, JSON (`sourcetype="_json"`)
+- Data source: Zeek/Bro SSH connection logs (JSON format) — Zeek is a network security monitor that generates structured logs from network traffic; this project analyzes a sample Zeek SSH log dataset in Splunk.
 - **Host:** Mahhyya
 
 ---
