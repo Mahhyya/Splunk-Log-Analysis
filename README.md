@@ -78,7 +78,7 @@ source="ssh_logs_new.json" host="Mahhyya" sourcetype="_json"
 | where fails > 3 AND successes > 0
 ```
 
-Full query set with explanations: [`spl-queries/queries.md`](./spl-queries/queries.md)
+Full query set with explanations: [`07-spl-queries/queries.md`](./07-spl-queries/queries.md)
 
 ---
 
