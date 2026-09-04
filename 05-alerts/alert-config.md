@@ -28,7 +28,8 @@ source="ssh_logs_new.json" host="Mahhyya" sourcetype="_json" event_type="Failed 
 ## Screenshots
  
 **Alert configuration page showing trigger condition and schedule**
-![Alert Settings](./screenshots/alert-settings.png)
+![Alert Settings](./screenshots/alert-settings_1.png)
+![Alert Settings](./screenshots/alert-settings_2.png)
  
 **Activity → Triggered Alerts showing a fired instance**
 ![Triggered Alerts](./screenshots/triggered-alerts.png)
