@@ -45,7 +45,19 @@ source="ssh_logs_new.json" host="Mahhyya" sourcetype="_json" event_type="Failed 
 A source IP with just 1-2 failed logins is usually normal user error (wrong password, typo). An IP with 5 or more failed attempts is a much stronger sign of an automated brute-force attack rather than a genuine mistake — that's why the `total_attempts >= 5` threshold is used to separate normal noise from suspicious activity.
  
 ## Findings
-- IPs flagged by Approach B: _fill in_
+- IPs flagged by Approach B: A large number of source IPs exceeded the `>= 5` failed-attempt threshold, indicating widespread automated brute-force activity rather than isolated incidents. Top 10 offenders:
+  | Source IP | Failed Attempts |
+  |---|---|
+  | 4.224.23.39 | 66 |
+  | 105.236.211.106 | 60 |
+  | 110.177.195.150 | 60 |
+  | 52.173.49.103 | 60 |
+  | 74.165.131.224 | 60 |
+  | 113.173.136.4 | 54 |
+  | 122.204.186.125 | 54 |
+  | 135.176.100.83 | 54 |
+  | 181.91.226.98 | 54 |
+  | 83.195.24.226 | 54 |
 - Any brute-force-then-breach IPs found (Approach C): No IPs in this dataset exhibited a brute-force-then-breach pattern — attacking source IPs either failed consistently across all attempts or succeeded without any preceding failures, suggesting the successful logins may represent legitimate users rather than compromised brute-force attempts.
 - Password spraying detected:No source IP exhibited password-spraying behavior (targeting 5+ distinct usernames) in this dataset — failed attempts were concentrated on a small number of usernames per IP, consistent with targeted brute-force rather than spraying.
 ## Screenshots
