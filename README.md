@@ -34,12 +34,11 @@ Simulate a real-world SOC analyst workflow: ingest raw SSH authentication logs i
 |---|---|
 | [`01-install`](./01-install) | Splunk installation steps & proof screenshots |
 | [`02-add-data`](./02-add-data) | Data onboarding process, index setup, field verification |
-| [`03-spl-queries`](./03-spl-queries) | Full SPL query reference used throughout the project |
-| [`04-failed-logins`](./04-failed-logins) | Failed login detection queries & results |
-| [`05-brute-force`](./05-brute-force) | Brute-force & brute-force-then-breach detection logic |
+| [`03-failed-logins`](./03-failed-logins) | Failed login detection queries & results |
+| [`04-brute-force`](./05-brute-force) | Brute-force & brute-force-then-breach detection logic |
+| [`05-alerts`](./07-alerts) | Alert configuration & triggered alert evidence |
 | [`06-dashboards`](./06-dashboards) | Exported dashboard source (JSON) & screenshots |
-| [`07-alerts`](./07-alerts) | Alert configuration & triggered alert evidence |
-
+| [`07-spl-queries`](./03-spl-queries) | Full SPL query reference used throughout the project |
 ---
 
 ## 🔑 Key Fields (Zeek/Bro SSH schema)
