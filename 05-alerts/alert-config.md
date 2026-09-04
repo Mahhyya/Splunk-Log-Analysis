@@ -6,21 +6,24 @@ Convert the brute-force detection query into a scheduled alert so active attacks
 ## Base Search
 ```spl
 source="ssh_logs_new.json" host="Mahhyya" sourcetype="_json" event_type="Failed SSH Login"
-| bin _time span=5m
-| stats sum(auth_attempts) as total_attempts by id.orig_h, _time
+| stats count as total_attempts by id.orig_h
 | where total_attempts >= 5
+| sort -total_attempts
 ```
  
 ## Configuration Steps
 1. Ran the base search above in Splunk.
 2. Clicked **Save As → Alert**.
-3. Trigger condition: **Number of results > 0**.
-4. Schedule: runs every **5 minutes**.
-5. Trigger action: **Add to Triggered Alerts** (no SMTP server configured, so email delivery wasn't used — this action logs the trigger event instead, which is enough to demonstrate the alert firing).
-6. Ran the search manually once to confirm the alert fires correctly.
-7. Verified in **Activity → Triggered Alerts** that the alert appeared with the correct timestamp and matching results.
+3. Title: `SSH Brute Force - Failed Login Threshold`
+4. Time range: **All time** (since the data source is a static uploaded file, not a live feed).
+5. Schedule: **Cron Schedule** — `*/5 * * * *` (every 5 minutes), chosen to simulate near-real-time detection.
+6. Trigger condition: **Number of Results is greater than 0**, trigger **Once** per run.
+7. Severity: **Medium** — failed login attempts indicate active probing/attack behavior, but no successful breach was confirmed in this dataset (see Approach C in `05-brute-force/brute-force.md`), so it doesn't warrant a Critical/High classification.
+8. Trigger action: **Add to Triggered Alerts** (no SMTP server configured, so email delivery wasn't used).
+9. Ran the search manually once to confirm the alert fires correctly.
+10. Verified in **Activity → Triggered Alerts** that the alert appeared with the correct timestamp and matching results.
 ## Why This Threshold
-5 failed attempts within a 5-minute window from a single source IP is a reasonable baseline for flagging brute-force behavior without generating excessive false positives from normal user typos.
+5 or more failed login attempts from a single source IP is a reasonable baseline for flagging brute-force behavior without generating excessive false positives from normal user typos.
  
 ## Screenshots
  
@@ -33,3 +36,5 @@ source="ssh_logs_new.json" host="Mahhyya" sourcetype="_json" event_type="Failed 
 ## Possible Improvements
 - Add an email or webhook action for real delivery instead of triggered-alerts logging.
 - Tune the threshold/window based on a larger, more realistic dataset.
+ 
+
