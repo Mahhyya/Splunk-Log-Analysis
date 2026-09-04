@@ -32,9 +32,9 @@ source="ssh_logs_new.json" host="Mahhyya" sourcetype="_json" event_type="Failed 
 ```
  
 ## Findings
-- Total failed login events: _fill in_
-- Top source IP by failure count: _fill in_
-- Most targeted username: _fill in_
+- Total failed login events: 3648
+- Top source IP by failure count: 4.224.23.39 (66 failed attempts — same top IP from the brute-force findings)
+- Most targeted username: root (162 attempts, 8.85%)
 ## Screenshots
  
 **Failed logins by source IP**
