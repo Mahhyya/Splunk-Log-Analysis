@@ -82,6 +82,14 @@ Full query set with explanations: [`07-spl-queries/queries.md`](./07-spl-queries
 
 ---
 
+## 🚨 Alert
+Configured a scheduled alert on the brute-force detection query (5-min interval, triggers when `total_attempts >= 5` for any source IP).
+
+![Alert Config](./07-alerts/screenshots/alert-settings.png)
+![Triggered Alert](./07-alerts/screenshots/triggered-alerts.png)
+
+---
+
 ## 📊 Dashboard
 Built in Dashboard Studio with panels for:
 - Failed logins over time
@@ -94,13 +102,6 @@ Built in Dashboard Studio with panels for:
 
 ---
 
-## 🚨 Alert
-Configured a scheduled alert on the brute-force detection query (5-min interval, triggers when `total_attempts >= 5` for any source IP).
-
-![Alert Config](./07-alerts/screenshots/alert-settings.png)
-![Triggered Alert](./07-alerts/screenshots/triggered-alerts.png)
-
----
 
 ## 📌 Key Findings
 - **Top attacking IP:** _fill in_
