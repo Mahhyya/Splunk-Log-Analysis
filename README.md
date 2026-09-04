@@ -36,10 +36,11 @@ Simulate a real-world SOC analyst workflow: ingest raw SSH authentication logs i
 | [`01-install`](./01-install) | Splunk installation steps & proof screenshots |
 | [`02-add-data`](./02-add-data) | Data onboarding process, index setup, field verification |
 | [`03-failed-logins`](./03-failed-logins) | Failed login detection queries & results |
-| [`04-brute-force`](./05-brute-force) | Brute-force & brute-force-then-breach detection logic |
-| [`05-alerts`](./07-alerts) | Alert configuration & triggered alert evidence |
+| [`04-brute-force`](./04-brute-force) | Brute-force & brute-force-then-breach detection logic |
+| [`05-alerts`](./05-alerts) | Alert configuration & triggered alert evidence |
 | [`06-dashboards`](./06-dashboards) | Exported dashboard source (JSON) & screenshots |
-| [`07-spl-queries`](./03-spl-queries) | Full SPL query reference used throughout the project |
+| [`07-spl-queries`](./07-spl-queries) | Full SPL query reference used throughout the project |
+
 ---
 
 ## 🔑 Key Fields (Zeek/Bro SSH schema)
@@ -104,27 +105,28 @@ Built in Dashboard Studio with panels for:
 
 ---
 
-
 ## 📌 Key Findings
 - **Top attacking IP:** `4.224.23.39` — 66 failed login attempts
 - **Most targeted username:** `root` — 162 attempts (8.85% of all failed logins)
 - **Brute-force-then-breach IPs identified:** None — no IP in the dataset showed both repeated failures and a subsequent success; attacking IPs either failed consistently or succeeded without prior failures
 - **Password spraying:** Not observed — every attacking IP targeted exactly one username (`unique_usernames = 1` across all IPs), consistent with targeted brute-force rather than spraying
 - **False positives observed:** None flagged — the `>= 5` failed-attempt threshold cleanly separated automated attack IPs from normal login noise
+
 ---
- 
+
 ## 💡 What I Learned
 - Installing and configuring Splunk Enterprise on Windows, including index creation and JSON log onboarding
 - Writing SPL using `stats`, `eval`, `where`, and `top` to detect authentication anomalies
 - Interpreting a negative/empty result as a legitimate analytical finding, not just a broken query
 - Building a Splunk dashboard with multiple panel types (bar, pie, line, single value)
 - Configuring a scheduled alert with cron scheduling and severity classification
+
 ## 🔮 What I'd Improve
 - Use a live/streaming data source instead of a static file
 - Integrate a threat intel feed to enrich `id.orig_h` with geolocation/reputation data
 - Add email/webhook alert actions instead of just triggered-alerts logging
 - Widen the time range window in the source data to better test time-based detections
-- 
+
 ---
 
 ## 🔗 Related Projects
