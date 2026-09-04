@@ -106,25 +106,25 @@ Built in Dashboard Studio with panels for:
 
 
 ## 📌 Key Findings
-- **Top attacking IP:** _fill in_
-- **Most targeted username:** _fill in_
-- **Brute-force-then-breach IPs identified:** _fill in_
-- **False positives observed:** _fill in_
-
+- **Top attacking IP:** `4.224.23.39` — 66 failed login attempts
+- **Most targeted username:** `root` — 162 attempts (8.85% of all failed logins)
+- **Brute-force-then-breach IPs identified:** None — no IP in the dataset showed both repeated failures and a subsequent success; attacking IPs either failed consistently or succeeded without prior failures
+- **Password spraying:** Not observed — every attacking IP targeted exactly one username (`unique_usernames = 1` across all IPs), consistent with targeted brute-force rather than spraying
+- **False positives observed:** None flagged — the `>= 5` failed-attempt threshold cleanly separated automated attack IPs from normal login noise
 ---
-
+ 
 ## 💡 What I Learned
-- How to onboard JSON-formatted log data into Splunk and verify field extraction
-- Writing SPL to detect authentication anomalies using `stats`, `bin`, and `eval`
-- Distinguishing simple failed-login noise from genuine brute-force patterns using time windows and attempt thresholds
-- Building and exporting Splunk dashboards as reusable source code
-- Configuring scheduled alerts for real-time-style detection
-
+- Installing and configuring Splunk Enterprise on Windows, including index creation and JSON log onboarding
+- Writing SPL using `stats`, `eval`, `where`, and `top` to detect authentication anomalies
+- Interpreting a negative/empty result as a legitimate analytical finding, not just a broken query
+- Building a Splunk dashboard with multiple panel types (bar, pie, line, single value)
+- Configuring a scheduled alert with cron scheduling and severity classification
 ## 🔮 What I'd Improve
-- Add a live/streaming data source instead of a static file
-- Integrate with a threat intel feed to enrich `id.orig_h` with geolocation/reputation
+- Use a live/streaming data source instead of a static file
+- Integrate a threat intel feed to enrich `id.orig_h` with geolocation/reputation data
 - Add email/webhook alert actions instead of just triggered-alerts logging
-
+- Widen the time range window in the source data to better test time-based detections
+- 
 ---
 
 ## 🔗 Related Projects
