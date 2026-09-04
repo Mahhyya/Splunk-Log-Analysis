@@ -59,7 +59,7 @@ A source IP with just 1-2 failed logins is usually normal user error (wrong pass
   | 181.91.226.98 | 54 |
   | 83.195.24.226 | 54 |
 - Any brute-force-then-breach IPs found (Approach C): No IPs in this dataset exhibited a brute-force-then-breach pattern — attacking source IPs either failed consistently across all attempts or succeeded without any preceding failures, suggesting the successful logins may represent legitimate users rather than compromised brute-force attempts.
-- Password spraying detected:No source IP exhibited password-spraying behavior (targeting 5+ distinct usernames) in this dataset — failed attempts were concentrated on a small number of usernames per IP, consistent with targeted brute-force rather than spraying.
+- Password spraying detected: No source IP exhibited password-spraying behavior (targeting 5+ distinct usernames) in this dataset — failed attempts were concentrated on a small number of usernames per IP, consistent with targeted brute-force rather than spraying.
 ## Screenshots
  
 **Approach A — High attempt count per connection**
