@@ -147,4 +147,4 @@ source="ssh_logs_new.json" host="Mahhyya" sourcetype="_json" event_type="Failed 
 - Top attacking IP: `4.224.23.39` (66 failed attempts)
 - Multiple additional IPs also exceeded the 5-attempt threshold (105.236.211.106, 110.177.195.150, 52.173.49.103, 74.165.131.224, and others at 54–60 attempts)
 - No brute-force-then-breach pattern found in this dataset
-- Password spraying: fill in once checked
+- Password spraying: No source IP exhibited password-spraying behavior (targeting 5+ distinct usernames) in this dataset — failed attempts were concentrated on a small number of usernames per IP, consistent with targeted brute-force rather than spraying.
